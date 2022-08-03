@@ -6,7 +6,16 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'Ionic 6 Angular ' + VERSION.major;
+  valorEmprestimo: number;
+  taxaJuros: number;
+  qtdeParcelas: number;
+  valorFinal: number;
+  valorParcela: number;
+
+  simularEmprestimo() {
+    this.valorFinal = this.valorEmprestimo + this.valorEmprestimo * (this.taxaJuros / 100);
+    this.valorParcela = this.valorFinal / this.qtdeParcelas;
+  }
 
   constructor() {}
 
